@@ -82,6 +82,7 @@ func (mm *MuxManager) reload() error {
 		fileName := file.Name()
 		if !strings.HasSuffix(strings.ToLower(fileName), ".json") ||
 			strings.HasPrefix(path.Base(fileName), ".") ||
+			strings.Contains(fileName,"example") ||
 			file.IsDir() {
 			continue
 		}
