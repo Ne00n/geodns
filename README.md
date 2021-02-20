@@ -220,6 +220,10 @@ continent
 
 region and regiongroup
 
+ip and subnet
+
+asn
+
 ## Supported record types
 
 Each label has a hash (object/associative array) of record data, the keys are the type.
