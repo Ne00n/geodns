@@ -23,6 +23,7 @@ type ZoneOptions struct {
 	Contact   string
 	Targeting targeting.TargetOptions
 	Closest   bool
+	Wildcard  bool
 
 	// temporary, using this to keep the healthtest code
 	// compiling and vaguely included
@@ -227,7 +228,9 @@ func (z *Zone) FindLabels(s string, targets []string, qts []uint16) []LabelMatch
 		case "@":
 			name = s
 		default:
-			if len(s) > 0 {
+			if z.Options.Wildcard && len(s) > 0 {
+				name = target
+			} else if len(s) > 0 {
 				name = s + "." + target
 			} else {
 				name = target

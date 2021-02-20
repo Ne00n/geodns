@@ -75,6 +75,8 @@ func (zone *Zone) ReadZoneFile(fileName string) (zerr error) {
 			zone.Options.Contact = v.(string)
 		case "max_hosts":
 			zone.Options.MaxHosts = typeutil.ToInt(v)
+		case "wildcard":
+			zone.Options.Wildcard = v.(bool)
 		case "closest":
 			zone.Options.Closest = v.(bool)
 			if zone.Options.Closest {

@@ -205,7 +205,7 @@ Set the default TTL for the zone (default 120).
 
 * max_hosts
 
-
+* wildcard
 
 * contact
 
