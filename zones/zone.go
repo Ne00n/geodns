@@ -228,7 +228,7 @@ func (z *Zone) FindLabels(s string, targets []string, qts []uint16) []LabelMatch
 		case "@":
 			name = s
 		default:
-			if z.Options.Wildcard && len(s) > 0 {
+			if z.Options.Wildcard && !strings.HasPrefix(s, "ns") && len(s) > 0 {
 				name = target
 			} else if len(s) > 0 {
 				name = s + "." + target
